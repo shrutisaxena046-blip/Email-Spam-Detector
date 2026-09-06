@@ -6,7 +6,7 @@ import pandas as pd
 # DASHBOARD TITLE
 # ============================================================
 
-st.title("📊 Spam Detection Dashboard")
+st.title(" Spam Detection Dashboard")
 
 st.write(
     "Overview of dataset distribution and machine learning model performance."
@@ -55,14 +55,14 @@ with col1:
 with col2:
 
     st.metric(
-        "🚨 Spam Messages",
+        " Spam Messages",
         f"{spam_messages:,}"
     )
 
 with col3:
 
     st.metric(
-        "📩 Ham Messages",
+        " Ham Messages",
         f"{ham_messages:,}"
     )
 
@@ -78,7 +78,7 @@ with col4:
 # FINAL MODEL INFORMATION
 # ============================================================
 
-st.subheader("🤖 Final Model")
+st.subheader("Final Model")
 
 st.write(
     f"Selected Model: **{model_name}**"
@@ -94,7 +94,7 @@ st.write(
 # MESSAGE DISTRIBUTION
 # ============================================================
 
-st.subheader("📈 Dataset Overview")
+st.subheader(" Dataset Overview")
 
 col1, col2 = st.columns(2)
 
@@ -117,7 +117,7 @@ with col2:
 # SPAM VS HAM DISTRIBUTION
 # ============================================================
 
-st.subheader("📊 Spam vs Ham Distribution")
+st.subheader(" Spam vs Ham Distribution")
 
 chart_data = {
     "Category": ["Spam", "Ham"],
@@ -135,7 +135,7 @@ st.bar_chart(
 # MODEL COMPARISON
 # ============================================================
 
-st.subheader("🏆 Model Comparison")
+st.subheader(" Model Comparison")
 
 model_comparison = pd.DataFrame({
     "Model": [
