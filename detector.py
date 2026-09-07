@@ -31,13 +31,13 @@ st.write(
 )
 
 st.info(
-    "💡 Enter a message below and click **Check Message** "
+    "Enter a message below and click **Check Message** "
     "to analyze it."
 )
 
 # MESSAGE INPUT
 message = st.text_area(
-    "📝 Enter your message",
+    "Enter your message",
     height=180,
     placeholder="Example: Congratulations! You have won a prize..."
 )

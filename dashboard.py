@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-# ============================================================
 # DASHBOARD TITLE
-# ============================================================
 
 st.title(" Spam Detection Dashboard")
 
@@ -12,10 +10,7 @@ st.write(
     "Overview of dataset distribution and machine learning model performance."
 )
 
-
-# ============================================================
 # KEY PERFORMANCE INDICATORS
-# ============================================================
 
 total_messages = 5572
 spam_messages = 747
@@ -31,18 +26,10 @@ ham_percentage = (
 
 accuracy = 96.86
 
-
-# ============================================================
 # FINAL MODEL
-# ============================================================
-
 model_name = "Logistic Regression"
 
-
-# ============================================================
 # KPI CARDS
-# ============================================================
-
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
@@ -69,14 +56,12 @@ with col3:
 with col4:
 
     st.metric(
-        "🎯 Model Accuracy",
+        " Model Accuracy",
         f"{accuracy}%"
     )
 
 
-# ============================================================
 # FINAL MODEL INFORMATION
-# ============================================================
 
 st.subheader("Final Model")
 
@@ -89,10 +74,7 @@ st.write(
     "better accuracy than Multinomial Naive Bayes."
 )
 
-
-# ============================================================
 # MESSAGE DISTRIBUTION
-# ============================================================
 
 st.subheader(" Dataset Overview")
 
@@ -112,11 +94,7 @@ with col2:
         f"{ham_percentage:.2f}%"
     )
 
-
-# ============================================================
 # SPAM VS HAM DISTRIBUTION
-# ============================================================
-
 st.subheader(" Spam vs Ham Distribution")
 
 chart_data = {
@@ -131,9 +109,7 @@ st.bar_chart(
 )
 
 
-# ============================================================
 # MODEL COMPARISON
-# ============================================================
 
 st.subheader(" Model Comparison")
 
@@ -152,19 +128,12 @@ st.bar_chart(
     model_comparison.set_index("Model")
 )
 
-
-# ============================================================
 # RUNTIME ANALYTICS - CURRENT USER SESSION
-# ============================================================
-
-st.subheader("👤 Runtime Analytics")
+st.subheader(" Runtime Analytics")
 
 history = st.session_state.prediction_history
 
-
-# ============================================================
 # CHECK IF USER HAS TESTED ANY MESSAGES
-# ============================================================
 
 if len(history) == 0:
 
@@ -175,17 +144,11 @@ if len(history) == 0:
 
 
 else:
-
-    # ========================================================
     # CONVERT HISTORY INTO DATAFRAME
-    # ========================================================
 
     runtime_data = pd.DataFrame(history)
 
-
-    # ========================================================
     # CALCULATE RUNTIME STATISTICS
-    # ========================================================
 
     total_checked = len(runtime_data)
 
@@ -201,47 +164,41 @@ else:
         runtime_data["confidence"].mean()
     )
 
-
-    # ========================================================
     # RUNTIME KPI CARDS
-    # ========================================================
 
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
 
         st.metric(
-            "🔍 Messages Checked",
+            " Messages Checked",
             total_checked
         )
 
     with col2:
 
         st.metric(
-            "🚨 Spam Detected",
+            " Spam Detected",
             spam_count
         )
 
     with col3:
 
         st.metric(
-            "📩 Not Spam",
+            "Not Spam",
             ham_count
         )
 
     with col4:
 
         st.metric(
-            "🎯 Avg Confidence",
+            "Avg Confidence",
             f"{average_confidence:.2f}%"
         )
 
-
-    # ========================================================
     # RUNTIME DISTRIBUTION
-    # ========================================================
 
-    st.write("### 📈 Your Prediction Distribution")
+    st.write("###  Your Prediction Distribution")
 
     runtime_chart_data = pd.DataFrame({
         "Prediction": ["Spam", "Not Spam"],
@@ -252,12 +209,10 @@ else:
         runtime_chart_data.set_index("Prediction")
     )
 
-
-    # ========================================================
     # PREDICTION HISTORY
-    # ========================================================
+    
 
-    st.write("### 🕐 Prediction History")
+    st.write("###  Prediction History")
 
     display_data = runtime_data.copy()
 
@@ -271,13 +226,11 @@ else:
     )
 
 
-# ============================================================
 # PROJECT INFORMATION
-# ============================================================
 
 st.divider()
 
-st.subheader("ℹ️ About This Project")
+st.subheader("ℹ About This Project")
 
 st.write(
     """

@@ -25,6 +25,6 @@ prediction = model.predict(message_tfidf)
 print("\nPrediction:", prediction[0])
 
 if prediction[0] == "spam":
-    print("⚠️ This message is SPAM!")
+    print("This message is SPAM!")
 else:
-    print("✅ This message is NOT SPAM.")
+    print("This message is NOT SPAM.")
